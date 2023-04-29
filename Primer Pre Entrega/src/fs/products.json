@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "Arroz",
+    "description": "Arroz Segunda Marca",
+    "price": 600,
+    "code": "codigo uno",
+    "thumbnail": "https://ardiaprod.vtexassets.com/arquivos/ids/236933/Arroz-Largo-Fino-0000-DIA-1-Kg-_1.jpg?v=638074058225830000",
+    "stock": 400,
+    "status": true,
+    "category": "Arroz"
+  },
+  {
+    "id": 2,
+    "title": "Gaseosa",
+    "description": "Gaseosa Primera Marca",
+    "price": 400,
+    "code": "codigo tres",
+    "thumbnail": "https://www.cocacola.es/content/dam/one/es/es2/coca-cola/products/productos/dic-2021/CC_Origal.jpg",
+    "stock": 200,
+    "status": true,
+    "category": "Gaseosa"
+  },
+  {
+    "id": 3,
+    "title": "Galletas",
+    "description": "Galletas Segunda Marca",
+    "price": 400,
+    "code": "codigo dos",
+    "thumbnail": "https://plazavea.vteximg.com.br/arquivos/ids/1919972-512-512/20017523.jpg",
+    "stock": 400,
+    "status": true,
+    "category": "Galletas"
+  },
+  {
+    "id": 4,
+    "title": "Cerveza",
+    "description": "Cerveza Segunda Marca",
+    "price": 800,
+    "code": "codigo siete",
+    "thumbnail": "https://www.heineken.com/media-la/01pfxdqq/heineken-original-bottle.png?quality=85",
+    "stock": 600,
+    "status": true,
+    "category": "Cerveza"
+  },
+  {
+    "id": 5,
+    "title": "Papel Higienico",
+    "description": "Papel Higienico Primera Marca",
+    "price": 1000,
+    "code": "codigo tres",
+    "thumbnail": "https://triomcbo.com/wp-content/uploads/2021/08/B946-Papel-Higienico-Familia-Acolchamax-Triple-Hoja-4-Rollos.jpg",
+    "stock": 1000,
+    "status": false,
+    "category": "Papel Higienico"
+  }
+]
