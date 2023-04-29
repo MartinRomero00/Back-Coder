@@ -63,19 +63,17 @@ export const saveProductToCart = async (idCart, idProduct) => {
         const cart = await getCart();
         const carts = cart.find(cart => cart.id == idCart);
         if (carts) {
-            const products = carts.products.find(product => product.id == idProduct);
-            if (!products) {
+            const product = carts.products.find(product => product.id == idProduct);
+            if (product) {
+                product.quantity = product.quantity + 1;
+            } else {
                 carts.products.push({
-                    product: idProduct,
+                    id: idProduct,
                     quantity: 1
                 });
-            } else {
-                if (products.product == idProduct) {
-                    quantity++;
-                }
             }
         } else {
-            console.log('no existe el carrito');
+            console.log('No existe el carrito');
         }
         fs.writeFileSync(cartsFilePath, JSON.stringify(cart));
         return carts;
