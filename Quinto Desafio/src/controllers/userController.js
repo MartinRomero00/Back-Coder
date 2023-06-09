@@ -34,3 +34,12 @@ export const userRegisterController = async (req, res, next) => {
         next(error);
     }
 }
+
+export const userLogoutController = async (req, res, next) => {
+    try {
+        req.session.destroy();
+        res.status(200).json({message: 'Logout successful'});
+    } catch (error) {
+        next(error);
+    }
+}
