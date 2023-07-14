@@ -8,6 +8,7 @@ import morgan from 'morgan';
 import './passport/local.js';
 import localRouter from './routes/localRouter.js';
 import userRouter from './routes/userRouter.js';
+import config from '../config.js'
 
 const app = express();
 
@@ -19,11 +20,11 @@ app.use(morgan('dev'));
 
 app.use(
     session({
-        secret: 'secretkey',
+        secret: config.secret_session,
         resave: false,
         saveUninitialized: true,
         store: MongoStore.create({
-            mongoUrl: 'mongodb+srv://Admin:admin@coder-back.rmiqfhh.mongodb.net/coderback?retryWrites=true&w=majority',
+            mongoUrl: config.db,
             ttl: 10
         })
     })
@@ -35,6 +36,8 @@ app.use(passport.session());
 app.use('/local', localRouter);
 app.use('/user', userRouter)
 
-app.listen(8080, () => {
-console.log('Server is running on port 8080');
+const PORT = config.port;
+
+app.listen(PORT, () => {
+console.log(`Server is running on port ${PORT}`);
 });
