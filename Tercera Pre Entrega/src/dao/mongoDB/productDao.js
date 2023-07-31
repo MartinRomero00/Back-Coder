@@ -8,7 +8,7 @@ export const getAll = async () => {
     }
 }
 
-export const getById = async (id) => {
+export const getByIdProduct = async (id) => {
     try {
         return await productModel.findById(id);
     } catch (error) {

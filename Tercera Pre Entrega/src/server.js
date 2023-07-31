@@ -24,7 +24,6 @@ app.use(
         saveUninitialized: true,
         store: MongoStore.create({
             mongoUrl: config.db,
-            ttl: 10
         })
     })
 )

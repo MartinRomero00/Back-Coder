@@ -1,4 +1,4 @@
-import { getAll, getById, createProduct, updateProduct, deleteProduct } from "../dao/mongoDB/productDao.js";
+import { getAll, getByIdProduct, createProduct, updateProduct, deleteProduct } from "../dao/mongoDB/productDao.js";
 
 export const getAllService = async () => {
     try {
@@ -10,7 +10,7 @@ export const getAllService = async () => {
 
 export const getByIdService = async (id) => {
     try {
-        return await getById(id);
+        return await getByIdProduct(id);
     } catch (error) {
         console.log(error);
     }
