@@ -1,0 +1,5 @@
+PORT= 8080
+MONGODB='mongodb+srv://Admin:admin@coder-back.rmiqfhh.mongodb.net/coderback?retryWrites=true&w=majority'
+SECRET_SESSION='secretkey'
+PASS= 'spnglnqrdwzsjahb'
+MAIL= 'martinromanromero@gmail.com'

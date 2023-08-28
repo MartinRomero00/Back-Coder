@@ -1,0 +1,76 @@
+components:
+  schema:
+    Products:
+      Product:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: ID del producto
+          name:
+            type: string
+            description: Nombre del producto
+          description:
+            type: string
+            description: Descripción del producto
+          price:
+            type: number
+            description: Precio del producto
+          stock:
+            type: number
+            description: Stock del producto
+        example:
+          id: 1
+          name: "Producto 1"
+          description: "Descripción del producto 1"
+          price: 1000
+          stock: 10
+      GetAllProducts:
+        type: array
+        items:
+          properties:
+            id:
+              type: integer
+              description: ID del producto
+              example: 1
+            name:
+              type: string
+              description: Nombre del producto
+              example: "Producto 1"
+            description:
+              type: string
+              description: Descripción del producto
+              example: "Descripción del producto 1"
+            price:
+              type: number
+              description: Precio del producto
+              example: 1000
+            stock:
+              type: number
+              description: Stock del producto
+              example: 10
+      ValidationSchemaError:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Mensaje de error
+        example:
+          message: "Error de validación"
+      NotFoundError:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Mensaje de error de servidor
+        example:
+          message: "Error de servidor"
+      ErrorGetById:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Mensaje de error no se encuentra el producto
+        example:
+          message: "No se encuentra el producto con id"
+            
