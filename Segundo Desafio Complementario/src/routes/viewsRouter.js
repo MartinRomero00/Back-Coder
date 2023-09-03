@@ -15,10 +15,6 @@ viewsRouter.get('/formPasswordError', (req, res) => {
     res.render('formPasswordError');
 });
 
-viewsRouter.get('/formAgain', (req, res) => {
-    res.render('formAgain');
-});
-
 viewsRouter.post('/reset', validatorFormPasswordController);
 
 export default viewsRouter;

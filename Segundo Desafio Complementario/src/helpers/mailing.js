@@ -11,7 +11,7 @@ const transporter = createTransport({
     }
 });
 
-export const sendMail = async (email, token, time) => {
+export const sendMail = async (email) => {
     try {
         const mailOptions = {
             from: config.mail,
@@ -19,7 +19,7 @@ export const sendMail = async (email, token, time) => {
             subject: 'Bienvenido a Tercera Practica Integradora',
             html: `
             <p>Haga clic en el siguiente enlace para poder restablecer su contraseña:</p>
-            <a href="http://localhost:8080/api/view/formulario?token=${token}&time=${time}">Reestablecer contraseña</a>
+            <a href="http://localhost:8080/api/view/formulario">Reestablecer contraseña</a>
             `
         }
         await transporter.sendMail(mailOptions);    

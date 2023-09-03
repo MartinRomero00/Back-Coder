@@ -17,31 +17,23 @@ export const addProductToCartController = async (req, res) => {
     }
 }
 
-
 export const validatorFormPasswordController = async (req, res) => {
     try {
-            const { password, token, time } = req.body;
-            const tokenExpiration = parseInt(time);
-            const now = new Date().getTime();
-            if ( now > tokenExpiration){
-               return res.redirect('/api/view/formAgain');
-            }else{
-                const passwordMatch = await getById(token);
-                const { email } = passwordMatch;
-                const user = { email, password };
-                    const passwordMatch2 = await userLogin( user);
-                    if ( passwordMatch2) {
-                       return res.redirect('/api/view/formPasswordError?token='+token+'&time='+time+'');
-                    } else {
-                        const newPassword = createHash(password);
-                        const userEmail = await getByEmail(email);
-                        if (userEmail) {
-                            userEmail.password = newPassword;
-                            await userEmail.save();
-                        }
-                    }
-                return res.redirect('/api/view/formOk');
+        const passwordMatch = await userLogin( req.body );
+        if ( passwordMatch) {
+            res.redirect('/api/view/formPasswordError');
+        } else {
+            const { email, password } = req.body;
+            const newPassword = createHash(password);
+            const userEmail = await getByEmail(email);
+            if (userEmail) {
+                console.log(userEmail.password);
+                console.log(newPassword);
+                userEmail.password = newPassword;
+                await userEmail.save();
             }
+            res.redirect('/api/view/formOk');
+        }
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
